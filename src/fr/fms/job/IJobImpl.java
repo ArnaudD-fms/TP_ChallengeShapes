@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Représente l'implementation de l'interface IJob.
+ * Représente l'implémentation de l'interface IJob.
  *
  * <p>Attributs :</p>
  * <ul>
@@ -31,6 +31,9 @@ public class IJobImpl implements IJob {
         shapes = new HashMap<>();
     }
 
+    /**
+     * @return L'ensemble des formes
+     */
     public Map<Integer, Shape> getShapes() {
         return shapes;
     }
@@ -78,7 +81,7 @@ public class IJobImpl implements IJob {
         shape.getCenter().setY(y);
     }
     /**
-     * Dessiner une forme quelque soit son type par ses coordonnées.
+     * Dessiner une forme à l'emplacement de ses coordonnées quelque soit son type.
      *
      * @param shape : le type de la forme
      * @param g : contexte graphique utilisé pour dessiner les formes
@@ -104,6 +107,11 @@ public class IJobImpl implements IJob {
         }
     }
 
+    /**
+     * Dessine toutes les formes présentent dans la map.
+     *
+     * @param g le contexte graphique dans lequel dessiner les forme
+     */
     @Override
     public void drawShapes(Graphics2D g) {
         for (Shape shape : shapes.values()) {

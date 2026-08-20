@@ -2,7 +2,7 @@ package fr.fms.graphic;
 
 import javax.swing.*;
 /**
- * Représente une fenetre d'affichage.
+ * Représente une fenêtre d'affichage.
  *
  * <p>Attributs :</p>
  * <ul>

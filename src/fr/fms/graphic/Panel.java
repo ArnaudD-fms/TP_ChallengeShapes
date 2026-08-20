@@ -36,23 +36,25 @@ public class Panel extends JPanel {
     /**
      * Redéfinit le composant graphique et affiche les formes.
      *
-     * @param g : contexte graphique utilisé pour dessiner les formes
+     * @param graphics : contexte graphique utilisé pour dessiner les formes
      */
     @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
+    protected void paintComponent(Graphics graphics) {
+        super.paintComponent(graphics);
 
         double scaleX = getWidth() / FRAME_WIDTH;
         double scaleY = getHeight() / FRAME_HEIGHT;
 
+        // On récupère la valeur minimale afin de ne pas avoir de déformation lors du redimensionnement.
         double scale = Math.min(scaleX, scaleY);
 
-        Graphics2D g2 = (Graphics2D) g.create();
+        Graphics2D graphics2D = (Graphics2D) graphics.create();
 
-        g2.scale(scale, scale);
+        // Permet d'adapter la taille des formes lors du redimensionnement de la fenêtre
+        graphics2D.scale(scale, scale);
 
-        job.drawShapes(g2);
+        job.drawShapes(graphics2D);
 
-        g2.dispose();
+        graphics2D.dispose(); // Supprime le contexte graphique et libère les ressources systèmes attribuées
     }
 }

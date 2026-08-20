@@ -51,7 +51,7 @@ public interface IJob {
     /**
      * Dessine une forme dans le contexte graphique donné
      *
-     * @param shape la forme à desssiner
+     * @param shape la forme à dessiner
      * @param g le contexte graphique dans lequel dessiner la forme
      */
     void drawShape(Shape shape, Graphics g);
