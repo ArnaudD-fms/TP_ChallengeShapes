@@ -14,7 +14,7 @@ public interface IJob {
      * @param id clé de la map
      * @param shape la forme à ajouter
      */
-    public void addShape(int id, Shape shape);
+    void addShape(int id, Shape shape);
 
     /**
      *
@@ -22,7 +22,7 @@ public interface IJob {
      *
      * @param id identifiant de la forme à supprimer
      */
-    public void deleteShape(int id);
+    void deleteShape(int id);
 
     /**
      *
@@ -31,7 +31,7 @@ public interface IJob {
      * @param id clé de le map
      * @return la forme correspondant à l'id
      */
-    public Shape getShapeById(int id);
+    Shape getShapeById(int id);
 
     /**
      *
@@ -41,15 +41,25 @@ public interface IJob {
      * @param x coordonnée horizontale du centre
      * @param y coordonnée verticale du centre
      */
-    public void moveShape(int id, int x, int y);
-
-    /**
-     * Dessine la forme
-     */
-    public void drawShape(Shape shape, Graphics g);
+    void moveShape(int id, int x, int y);
 
     /**
      * Affiche toutes les formes
      */
-    public void displayAll();
+    void displayAll();
+
+    /**
+     * Dessine une forme dans le contexte graphique donné
+     *
+     * @param shape la forme à desssiner
+     * @param g le contexte graphique dans lequel dessiner la forme
+     */
+    void drawShape(Shape shape, Graphics g);
+
+    /**
+     * Dessine toutes les formes présentent dans la map
+     *
+     * @param g le contexte graphique dans lequel dessiner les forme
+     */
+    void drawShapes(Graphics2D g);
 }

@@ -15,6 +15,11 @@ public class IJobImpl implements IJob {
     public IJobImpl() {
         shapes = new HashMap<>();
     }
+
+    public Map<Integer, Shape> getShapes() {
+        return shapes;
+    }
+
     @Override
     public void addShape(int id, Shape shape) {
         shapes.put(id, shape);
@@ -55,6 +60,13 @@ public class IJobImpl implements IJob {
                         (int) Math.round(radius),
                         (int) Math.round(radius));
 
+        }
+    }
+
+    @Override
+    public void drawShapes(Graphics2D g) {
+        for (Shape shape : shapes.values()) {
+            drawShape(shape, g);
         }
     }
 

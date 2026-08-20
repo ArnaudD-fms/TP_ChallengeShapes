@@ -8,6 +8,9 @@ import fr.fms.job.IJobImpl;
 import javax.swing.*;
 import java.awt.*;
 
+import static fr.fms.graphic.Frame.FRAME_HEIGHT;
+import static fr.fms.graphic.Frame.FRAME_WIDTH;
+
 /**
  * Représente un panneau d'affichage.
  *
@@ -18,12 +21,12 @@ import java.awt.*;
  * </ul>
  */
 public class Panel extends JPanel {
-	
+
     /**
 	 * Identifiant de version utilisé lors de la sérialisation de la classe.
 	 */
 	private static final long serialVersionUID = 1L;
-	IJob job = new IJobImpl();
+    IJob job = new IJobImpl();
 
     public Panel() {
         job.addShape(1, new Square(50, 100, 100));
@@ -31,7 +34,7 @@ public class Panel extends JPanel {
     }
 
     /**
-     * Redessine le composant et affiche les formes associées aux identifiants 1 et 2.
+     * Redéfinit le composant graphique et affiche les formes.
      *
      * @param g : contexte graphique utilisé pour dessiner les formes
      */
@@ -39,8 +42,8 @@ public class Panel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        double scaleX = getWidth() / 350.0;
-        double scaleY = getHeight() / 250.0;
+        double scaleX = getWidth() / FRAME_WIDTH;
+        double scaleY = getHeight() / FRAME_HEIGHT;
 
         double scale = Math.min(scaleX, scaleY);
 
@@ -48,7 +51,8 @@ public class Panel extends JPanel {
 
         g2.scale(scale, scale);
 
-        job.drawShape(job.getShapeById(1), g2);
-        job.drawShape(job.getShapeById(2), g2);
+        job.drawShapes(g2);
+
+        g2.dispose();
     }
 }

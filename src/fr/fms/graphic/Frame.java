@@ -11,6 +11,8 @@ import javax.swing.*;
  * </ul>
  */
 public class Frame extends JFrame {
+	public static final double FRAME_WIDTH = 350.0;
+	public static final double FRAME_HEIGHT = 250.0;
 
     /**
 	 * Identifiant de version utilisé lors de la sérialisation de la classe.
@@ -25,7 +27,7 @@ public class Frame extends JFrame {
 	public Frame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Shapes challenge");
-        setSize(350, 250);
+        setSize((int) Math.round(FRAME_WIDTH), (int) Math.round(FRAME_HEIGHT));
 
         add(new Panel());
 
