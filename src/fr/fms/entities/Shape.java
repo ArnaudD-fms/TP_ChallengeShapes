@@ -40,6 +40,14 @@ public abstract class Shape {
      */
     public abstract double area();
 
+    public Point getCenter() {
+        return center;
+    }
+
+    public void setCenter(Point center) {
+        this.center = center;
+    }
+
     /**
      * Représentation textuelle de la forme indiquant son centre.
      *

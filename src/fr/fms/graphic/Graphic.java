@@ -1,5 +1,5 @@
 /**
- * Programme permettant l'affichage de plusieurs formes g�om�triques
+ * Programme permettant l'affichage de plusieurs formes géométriques
  * 
  * @author El babili - 2023
  * 
@@ -21,7 +21,7 @@ public class Graphic extends JFrame {
 		setVisible(true);			
 	}
 	
-	@Override	//le repère x,y commence en haut à gauche (0,0)
+	@Override	//le repère x, y commence en haut à gauche (0,0)
 	public void paint(Graphics g) {	
 		super.paint(g);
 	}
