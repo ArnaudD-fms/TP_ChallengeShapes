@@ -50,7 +50,10 @@ public class IJobImpl implements IJob {
         } else if (shape instanceof Circle) {
 
             double radius = ((Circle) shape).getRadius();
-            g.fillOval((int) (x - radius / 2), (int) (y - radius / 2), (int) radius, (int) radius);
+            g.fillOval( (int) Math.round(x - radius / 2),
+                        (int) Math.round(y - radius / 2),
+                        (int) Math.round(radius),
+                        (int) Math.round(radius));
 
         }
     }
