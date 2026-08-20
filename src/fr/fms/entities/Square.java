@@ -1,22 +1,22 @@
 package fr.fms.entities;
 /**
- * Représente un carré avec ses cotés
+ * Représente un carré avec ses côtés
  *
  * <p>Attributs :</p>
  * <ul>
- *     <li>{@link #side} — longueur d'un coté</li>
-
+ *     <li>{@link #side} — longueur d'un côté</li>
  * </ul>
  */
 public class Square extends Shape{
 	/**
-     * longueur d'un coté
+     * Longueur d'un côté
      */
 	private int side;
 
 	/**
-	 * Construit un carré à partir de la longueur d'un coté
-	 * @param side
+	 * Construit un carré à partir de la longueur d'un côté
+	 *
+	 * @param side longueur d'un côté
 	 */
 	public Square(int side, int x, int y) {
 		super(x, y);
@@ -41,14 +41,16 @@ public class Square extends Shape{
 		}
 	}
 	/**
-	 * calcule l'aire du carré
+	 * Calcule l'aire du carré
+	 *
 	 * @return l'aire du carré
 	 */
 	public double area() {
 		return this.side * this.side;
 	}
 	/**
-	 * calcule le périmètre
+	 * Calcule le périmètre
+	 *
 	 * @return le périmètre
 	 */
 	public double perimeter() {
