@@ -41,13 +41,15 @@ public class Square extends Shape{
 		}
 	}
 	/**
-	 * @param calcule l'aire du carré
+	 * calcule l'aire du carré
+	 * @return l'aire du carré
 	 */
 	public double area() {
 		return this.side * this.side;
 	}
 	/**
 	 * calcule le périmètre
+	 * @return le périmètre
 	 */
 	public double perimeter() {
 		return 4 * side;
