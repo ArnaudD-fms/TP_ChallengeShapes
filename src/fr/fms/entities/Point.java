@@ -20,6 +20,12 @@ public class Point {
      */
     private int y;
 
+    /**
+     * Construit un point à partir de coordonnées x, y
+     *
+     * @param x coordonnée horizontale du point
+     * @param y coordonnée verticale du point
+     */
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
