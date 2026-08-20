@@ -1,5 +1,7 @@
+import fr.fms.graphic.Graphic;
+
 public class Main {
     public static void main(String[] args) {
-
+        new Graphic();
     }
 }
