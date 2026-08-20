@@ -1,7 +1,10 @@
 package fr.fms.job;
 
+import fr.fms.entities.Circle;
 import fr.fms.entities.Shape;
+import fr.fms.entities.Square;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,8 +38,21 @@ public class IJobImpl implements IJob {
     }
 
     @Override
-    public void drawShape() {
+    public void drawShape(Shape shape, Graphics g) {
+        int x = shape.getCenter().getX();
+        int y = shape.getCenter().getY();
 
+        if (shape instanceof Square) {
+
+            int side = ((Square) shape).getSide();
+            g.fillRect(x - side / 2, y - side / 2, side, side);
+
+        } else if (shape instanceof Circle) {
+
+            double radius = ((Circle) shape).getRadius();
+            g.fillOval((int) (x - radius / 2), (int) (y - radius / 2), (int) radius, (int) radius);
+
+        }
     }
 
     @Override

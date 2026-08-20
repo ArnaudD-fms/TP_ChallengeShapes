@@ -2,6 +2,8 @@ package fr.fms.job;
 
 import fr.fms.entities.Shape;
 
+import java.awt.*;
+
 /**
  * Définit les méthodes métiers
  */
@@ -44,7 +46,7 @@ public interface IJob {
     /**
      * Dessine la forme
      */
-    public void drawShape();
+    public void drawShape(Shape shape, Graphics g);
 
     /**
      * Affiche toutes les formes

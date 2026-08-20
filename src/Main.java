@@ -1,7 +1,9 @@
-import fr.fms.graphic.Graphic;
+import fr.fms.graphic.Frame;
+import javax.swing.*;
 
 public class Main {
+
     public static void main(String[] args) {
-        new Graphic();
+        SwingUtilities.invokeLater(Frame::new);
     }
 }
